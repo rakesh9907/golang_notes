@@ -92,11 +92,11 @@
 
     ```
 
-##  Feature const iota
-    | Feature | `const` | `iota` |
-    |---------|---------|--------|
-    | Type | Immutable fixed values | Auto-incrementing constants |
-    | Defalut Behavior | Must assign manually | Starts at 0, increments per line |
-    | Scope | works for all types | primarilly for integers |
-    | Flexibility | fixed values only | Allows aut-numbering, bit-shifting |
-    | Best use case | PI value, fixed settings | Enums, bit flags, custom sequences |
+##  Feature const vs. iota Summary
+| Feature | `const` | `iota` |
+|---------|---------|--------|
+| Type | Immutable fixed values | Auto-incrementing constants |
+| Defalut Behavior | Must assign manually | Starts at 0, increments per line |
+| Scope | works for all types | primarilly for integers |
+| Flexibility | fixed values only | Allows aut-numbering, bit-shifting |
+| Best use case | PI value, fixed settings | Enums, bit flags, custom sequences |
