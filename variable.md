@@ -39,13 +39,13 @@
     - unsafe is package and Sizeof function which return size of perticulare allocation
 
 - check size of Struct
-    **type Person struct {
+    ``` type Person struct {
         name string
         age int
     }
     
     var p Person
     fmt.Println(unsafe.Sizeof(p))   // o/p 24
-    **
+    ```
 
     
