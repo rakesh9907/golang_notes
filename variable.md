@@ -12,6 +12,10 @@
 - Here define boolean variable
     - var isActive bool = false
 
+- Integer Types
+    - int, int8, int16, int32, int64 -> Signed integers
+    - uint, uint8, uint16, uint32, uint64 -> Unsigned integers
+
 ## Short hand declaration ( this called inferred )
 - Here short hand declartion
     - a := 10  int
@@ -39,15 +43,60 @@
     - unsafe is package and Sizeof function which return size of perticulare allocation
 
 - check size of Struct
-    ``` 
+    ```
+        // define struct 
         type Person struct {
             name string
             age int
         }
         
         var p Person
-        fmt.Println(unsafe.Sizeof(p))   // o/p 24
+        fmt.Println(unsafe.Sizeof(p))   // o/p 24bytes 
 
     ```
 
-    
+## Const Variable
+    ```
+        const PI = 3.4159
+        const GREETING = "Good morning"
+    ```
+
+
+## Default Value
+    ```
+        var i int
+        var f float64
+        var b bool
+        var s string
+
+        // if no value assing by default it will assing this values
+        fmt.Println(i, f, b, s)  // o/p  0 0 false ""
+    ```
+
+## Alias
+    ```
+        check it work for other data types also please check it
+
+        var r rune = 'A'  // rune is an alias for int32
+        var b byte = 'B'  // byte is an alias for uint8
+        
+        // to store the character value in that case we should declare the variable as rune
+        // char is not a data type in go
+        // char can be stored in rune / byte
+        // rune use for  -> unicode, char, emojis, foreign scripts
+        // byte use for -> ASCII code
+        // in r and b have ascii value hold 
+
+
+        fmt.Println(r, string(r), b, string(b)) // 65 A 66 B    ascii values of A and B
+
+    ```
+
+##  Feature const iota
+    | Feature | `const` | `iota` |
+    |---------|---------|--------|
+    | Type | Immutable fixed values | Auto-incrementing constants |
+    | Defalut Behavior | Must assign manually | Starts at 0, increments per line |
+    | Scope | works for all types | primarilly for integers |
+    | Flexibility | fixed values only | Allows aut-numbering, bit-shifting |
+    | Best use case | PI value, fixed settings | Enums, bit flags, custom sequences |
