@@ -92,11 +92,80 @@
 
     ```
 
-##  Feature const vs. iota Summary
+##  Feature const vs. `iota` Summary
 | Feature | `const` | `iota` |
 |---------|---------|--------|
 | Type | Immutable fixed values | Auto-incrementing constants |
 | Defalut Behavior | Must assign manually | Starts at 0, increments per line |
 | Scope | works for all types | primarilly for integers |
-| Flexibility | fixed values only | Allows aut-numbering, bit-shifting |
+| Flexibility | fixed values only | Allows auto-numbering, bit-shifting |
 | Best use case | PI value, fixed settings | Enums, bit flags, custom sequences |
+
+```
+    const (
+        A = iota
+        B
+        c
+        D
+    )
+
+    fmt.Println(A, B, C, D) // o/p 0 1 2 3
+
+    const (
+            A = iota
+            B = 500
+            c = iota
+            D = iota
+        )
+
+        fmt.Println(A, B, C, D) // o/p 0 500 2 3
+    
+    const (
+            A = iota
+            B = 500
+            c = iota
+            D
+        )
+
+    fmt.Println(A, B, C, D) // o/p 0 500 2 3
+
+    const (
+        A = iota
+        B = 500
+        c
+        D
+    )
+
+    fmt.Println(A, B, C, D) // o/p 0 500 500 500
+
+    const (
+        A = iota +200
+        B
+        c
+        D
+    )
+
+    fmt.Println(A, B, C, D) // o/p 200 201 202 203
+
+
+    const (
+        A = 200 + (iota * 10)
+        B
+        c
+        D
+    )
+
+    fmt.Println(A, B, C, D) // o/p 201 211 221 231
+
+
+    const (
+        A = 200 + (iota * 10) // 0
+        B                       // 1
+        c = 500 + (iota * 10) // here iota value 2
+        D                     // 3
+    )
+
+    fmt.Println(A, B, C, D) // o/p 201 211 520 530
+
+```
+
