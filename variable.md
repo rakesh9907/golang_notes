@@ -6,7 +6,7 @@
 - Define String
     - var str string = "hello"
 
-- Here define float variable according to value lenght two type of float type float32 and float64
+- Here define float variable according to value length two type of float type float32 and float64
     - var b float32 = 10.3
 
 - Here define boolean variable
@@ -14,9 +14,9 @@
 
 ## Short hand declaration ( this called inferred )
 - Here short hand declartion
-    - a := 10
-    - str := "hello"
+    - a := 10  int
+    - str := "hello"  string
 
     - A float declared using short-hand syntax (:=) is automatically inferred as float64.
-        - b := 10.5
-    - isActive := false
+        - b := 10.5  float64
+    - isActive := false  boolean
