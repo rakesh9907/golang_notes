@@ -167,5 +167,18 @@
 
     fmt.Println(A, B, C, D) // o/p 201 211 520 530
 
+    const (
+        _ = iota
+        A
+        B
+        C
+        _  = iota // skip iota 4 value
+        D
+    )
+
+    // skip 0 value
+    fmt.Println(A, B, C, D) // o/p 1 2 3 5
 ```
+
+
 
